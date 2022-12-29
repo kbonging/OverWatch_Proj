@@ -1,0 +1,8 @@
+-- D/N : herb
+-- T/N :sample
+
+--쿼리문
+select * from zipcode
+where dong like '%역삼%';
+
+select * from zipcode;

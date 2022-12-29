@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="zipcode">
+	<select id="selectDong" parameterType="hashMap" resultType="hashMap">
+			<![CDATA[
+				select zipcode, area1, area2, area3, area4
+				from tblZipcode 
+				where area3 like CONCAT('%',#{area3},'%');
+			 ]]>
+	</select>
+	<!-- 
+	String sql = "select zipcode, area1, area2, area3, area4 ";
+			         sql += " from tblZipcode where area3 like ?"; -->
+	
+</mapper>

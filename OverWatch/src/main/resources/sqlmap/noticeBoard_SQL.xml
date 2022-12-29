@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="NoticeBoard">
+	
+	<select id="select_keyWord" parameterType="hashMap" resultType="hashMap">
+		<![CDATA[
+				 select * from NoticeBoard where ${keyField }  like CONCAT('%','${keyWord}','%') order by num desc limit  #{start}, #{end};
+		 ]]>
+	</select>
+
+	<select id="select_All" parameterType="hashMap" resultType="hashMap">
+		<![CDATA[
+				 select * from NoticeBoard order by num desc limit  #{start}, #{end};
+		 ]]>
+	</select> 
+	
+	<select id="select_countAll" parameterType="hashMap" resultType="int">
+		<![CDATA[
+				select count(*) from NoticeBoard;
+		 ]]>
+	</select>
+	
+	<select id="select_countKey" parameterType="hashMap" resultType="int">
+		<![CDATA[
+				select count(*) from NoticeBoard where ${keyField} like CONCAT('%','${keyWord}','%');
+		 ]]>
+	</select>
+	 
+	<!--  글쓰기 -->
+	<insert id="insert_NoticeBoard" parameterType="hashMap" useGeneratedKeys="true" keyProperty="num">
+		<![CDATA[
+				insert into NoticeBoard(uId, uName, subject, content, regTM, readCnt, fileName, fileSize)
+				values(#{uId}, #{uName}, #{subject}, #{content}, now(), 0, #{fileName}, #{fileSize});
+		 ]]>
+	</insert>
+	
+	<select id="select_maxNum" resultType="hashMap">
+		<![CDATA[
+			select max(num) from NoticeBoard 
+		 ]]>
+	</select>
+	
+	<select id="selectByNum" parameterType="hashMap" resultType="hashMap">
+		<![CDATA[
+			select * from NoticeBoard  where num=#{num}
+		 ]]>
+	</select>
+	
+	<update id="update_NoticeBoard" parameterType="hashMap">
+		<![CDATA[
+			update NoticeBoard set subject=#{subject}, content=#{content} where num=#{num}
+		 ]]>
+	</update>
+	
+	<!-- 조회수 -->
+	<update id="upCount" parameterType="hashMap">
+		<![CDATA[
+			update NoticeBoard set readCnt = readCnt + 1  where num = #{num}
+		 ]]>
+	</update>
+	
+	
+</mapper>

@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+/*////////////////////////////////////////////////////////////////////*/
+/*////////////////// memList 목록 시작 /amdin/memList.jsp ////////////////// */
+/*////////////////////////////////////////////////////////////////////*/
+
+div#wrap>main#main>div.bbsList {
+	width: 860px;
+	padding: 20px;
+	/*border: 1px solid #f80;*/
+	margin: 0 auto;
+}
+
+
+div.bbsList div#pageInfo {
+	width: 100%;
+	padding: 2px 10px;
+	margin-bottom: 4px;
+	justify-content: space-between;
+}
+
+div.bbsList table#boardList {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+div.bbsList th {
+	padding: 8px 2px;
+	background-color: rgba(0, 136, 255, 0.1);
+}
+
+div.bbsList th:first-child {
+    width: 10%;
+} 
+
+div.bbsList th:last-child {
+    width: 30%;
+}
+
+div.bbsList th:nth-child(2), div.bbsList th:nth-child(3) {
+    width: 30%;
+}
+
+div.bbsList td.spaceTd {
+	padding: 1px 0;
+	border: none !important;
+	background-color: rgba(136, 136, 136, 0.2);
+}
+
+div.bbsList tr.prnTr:hover {
+	background-color: rgba(0, 136, 255, 0.1);
+	cursor: pointer;
+}
+
+div.bbsList tr.prnTr:hover td {
+	color: #666;
+	font-weight: bold;
+}
+
+div.bbsList tr.prnTr>td {
+	text-align: center;
+	padding: 20px 2px 10px;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+
+/* 리스트 페이지 버튼 공통 스타일 시작 */
+div.bbsList button.listBtnStyle {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 2px 6px;
+	cursor: pointer;
+}
+/* 리스트 페이지 버튼 공통 스타일 끝 */
+
+
+/* 리스트 /bbs/list.jsp 글쓰기, 검색 영역 시작 */
+div.bbsList tr#listBtnArea td {
+	padding-top: 20px;
+}
+
+div.bbsList form#searchFrm {
+	justify-content: flex-end;
+}
+
+div.bbsList form#searchFrm>div {
+	margin: 4px;
+}
+
+div.bbsList #searchFrm select, 
+div.bbsList #searchFrm input {
+	font-size: 16px;
+	padding: 2px 6px;
+}
+
+/* 리스트 /bbs/list.jsp 글쓰기, 검색 영역 끝 */
+
+
+
+/* 리스트 /bbs/list.jsp  페이징 영역 시작 */
+
+div.bbsList tr#listPagingArea td {
+	padding-top: 20px;
+}
+
+div.bbsList td#pagingTd {	
+	text-align: center;
+}
+div.bbsList td#pagingTd span {
+	width: 30px;
+	height: 30px;
+	font-weight: 12px;
+	text-align: center;
+	line-height: 30px;
+	margin: 10px 2px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+div.bbsList td#pagingTd span:hover {
+	color: #aaa;  /*   a  => 16 * 11 : 176*/
+}
+
+div.bbsList td#pagingTd span.nowPageNum {
+	font-size: 16px;
+	font-weight: bold;
+	background-color: rgba(136, 136, 136, 0.1);
+	cursor: default;
+}
+
+div.bbsList td#pagingTd span.moveBlockArea {
+	width: 30px;
+	height: 30px;
+	font-size: 12px;
+	margin: 0 6px;
+	display: inline-block;
+}
+/* 리스트 /admin/memList.jsp  페이징 영역 끝 */
+
+
+/*////////////////////////////////////////////////////////////////////*/
+/*////////////////// memList 목록 끝 /admin/memList.jsp ////////////////// */
+/*////////////////////////////////////////////////////////////////////*/
