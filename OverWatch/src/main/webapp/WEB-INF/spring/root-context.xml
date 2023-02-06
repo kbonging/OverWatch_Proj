@@ -10,11 +10,11 @@
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 		
 		<property name="url" 
-			value="jdbc:mysql://192.168.0.117:3306/testdb?serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;char
+			value="jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;char
 			acterEncoding=UTF-8" />
 			
-		<property name="username" value="kimleehong" />
-		<property name="password" value="rladlghd1234" />
+		<property name="username" value="root" />
+		<property name="password" value="1234" />
 	</bean>
 	
 	

@@ -32,7 +32,10 @@ import pack.spring.project.member.MemberService;
 
 @Controller
 public class NoticeBoardController {
-	private static final String SAVEFOLER = "C:/Users/EZEN202/git/Project_OverWatch/Project_OverWatch/src/main/webapp/resources/NoticeFileUpload";
+	// 집용
+	private static final String SAVEFOLER = "C:/Users/apple/git/OverWatch_Proj/OverWatch/src/main/webapp/resources/NoticeFileUpload";
+	
+//	private static final String SAVEFOLER = "C:/Users/EZEN202/git/Project_OverWatch/Project_OverWatch/src/main/webapp/resources/NoticeFileUpload";
 	// private static final String SAVEFOLER =
 	// "C:/Users/User/git/Project_OverWatch/Project_OverWatch/src/main/webapp/resources/fileUpload";
 	private static String encType = "UTF-8";
@@ -152,10 +155,10 @@ public class NoticeBoardController {
 	public ModelAndView bbsWrite(HttpServletRequest request, HttpSession session) {
 		String uId = (String) session.getAttribute("uId");
 
-		System.out.println("/noticeWrite - request : " + request.getParameter("nowPage").toString());
-		System.out.println("/noticeWrite - request : " + request.getParameter("keyField").toString());
-		System.out.println("/noticeWrite - request : " + request.getParameter("keyWord").toString());
-		System.out.println("/noticeWrite - request : " + request.getParameter("gnbParam").toString());
+		System.out.println("/noticeWrite - request nowPage : " + request.getParameter("nowPage").toString());
+		System.out.println("/noticeWrite - request keyField: " + request.getParameter("keyField").toString());
+		System.out.println("/noticeWrite - request keyWord: " + request.getParameter("keyWord").toString());
+		System.out.println("/noticeWrite - request gnbParam: " + request.getParameter("gnbParam").toString());
 
 		String nowPage = request.getParameter("nowPage").toString();
 		String keyField = request.getParameter("keyField").toString();
@@ -249,7 +252,7 @@ public class NoticeBoardController {
 		String msg = "공지글 쓰기 실패", url = "/noticeWrite";
 		if (bbsNum > 0) {
 			msg = "쓰기 성공";
-			url = "/noticelist";
+			url = "/noticelist?gnbParam=bbs";
 		}
 
 		ModelAndView mav = new ModelAndView();
