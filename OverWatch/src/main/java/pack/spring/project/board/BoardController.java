@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +43,8 @@ public class BoardController {
 	private static String encType = "UTF-8";
 	private static int maxSize = 5 * 1024 * 1024;
 	
+	private static Date currentDate = new Date();
+	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
 	
 	@Autowired
@@ -104,11 +111,37 @@ public class BoardController {
 			totalRecord = boardService.select_countAll(map);
 		}
 
+		Date date = new Date();
+		System.out.println(date);
+		
+		
+		
+		
 		for (int i = 0; i < list.size(); i++) {
 			Map<String, Object> userMap = list.get(i);
 			String regTM = userMap.get("regTM").toString();
+			System.out.println("substring 사용 전 DB에서 가져온 날짜"+regTM);
+			
 			regTM = regTM.substring(0,10)+" "+regTM.substring(11);
-			userMap.put("regTM", regTM);
+//			userMap.put("regTM", regTM);
+			
+			
+			
+//			regTM =  regTM.substring(0, 10);
+			
+			try {
+				Date d1 = sdf.parse(regTM); // String 타입의 등록일을 Date 로 형 변환
+				System.out.println("등록일 : "+d1);
+			  	long diff =  (currentDate.getTime() - d1.getTime()) / (1000*60*60*24); // 현재 날짜밀리초와 등록일 날짜 밀리초와 차이를 구하고 일로 구함
+			  	
+			  	String daysAgo = diff+"일전";
+			  	
+			  	userMap.put("regTM", daysAgo);
+			  	
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			
 			
 			int boardNo = (int) userMap.get("num");
 			userMap.put("boardNo", boardNo);
@@ -118,7 +151,7 @@ public class BoardController {
 				int comCount = commentsService.select_comCountAll(userMap);
 				userMap.put("comCount", comCount);
 			}
-		}
+		}//for
 		
 		
 		
