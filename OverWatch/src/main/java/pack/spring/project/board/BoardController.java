@@ -36,8 +36,11 @@ import pack.spring.project.member.MemberService;
 
 @Controller
 public class BoardController {
-	private static final String SAVEFOLER = "C:/Users/apple/git/OverWatch_Proj/OverWatch/src/main/webapp/resources/fileUpload";
+	//pc
+//	private static final String SAVEFOLER = "C:/Users/apple/git/OverWatch_Proj/OverWatch/src/main/webapp/resources/fileUpload"; 
 	
+	//laptop
+	private static final String SAVEFOLER = "C:/Users/bong/git/OverWatch_Proj/OverWatch/src/main/webapp/resources/fileUpload";
 //	private static final String SAVEFOLER = "C:/Users/EZEN202/git/Project_OverWatch/Project_OverWatch/src/main/webapp/resources/fileUpload";
 	//	private static final String SAVEFOLER = "C:/Users/User/git/Project_OverWatch/Project_OverWatch/src/main/webapp/resources/fileUpload";
 	private static String encType = "UTF-8";

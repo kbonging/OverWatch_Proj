@@ -32,12 +32,11 @@ import pack.spring.project.member.MemberService;
 
 @Controller
 public class NoticeBoardController {
-	// 집용
-	private static final String SAVEFOLER = "C:/Users/apple/git/OverWatch_Proj/OverWatch/src/main/webapp/resources/NoticeFileUpload";
+	// desktop
+//	private static final String SAVEFOLER = "C:/Users/apple/git/OverWatch_Proj/OverWatch/src/main/webapp/resources/NoticeFileUpload";
 	
-//	private static final String SAVEFOLER = "C:/Users/EZEN202/git/Project_OverWatch/Project_OverWatch/src/main/webapp/resources/NoticeFileUpload";
-	// private static final String SAVEFOLER =
-	// "C:/Users/User/git/Project_OverWatch/Project_OverWatch/src/main/webapp/resources/fileUpload";
+	//laptop
+	private static final String SAVEFOLER = "C:/Users/bong/git/OverWatch_Proj/OverWatch/src/main/webapp/resources/NoticeFileUpload";
 	private static String encType = "UTF-8";
 	private static int maxSize = 5 * 1024 * 1024;
 
